@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Школа русского языка Анастасии Викуловой</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/styles.css">
+    <script defer src="script.js"></script>
 </head>
 
 <body>
@@ -37,35 +38,52 @@
     </nav>
 
     <script>
-        function showSidebar() {
-            const sidebar = document.querySelector('.sidebar')
-            sidebar.style.display = 'flex'
-        }
-        function hideSidebar() {
-            const sidebar = document.querySelector('.sidebar')
-            sidebar.style.display = 'none'
-        }
+        
+
+
+
     </script>
     <div class="container-main">
         <div class="main-info">
             <div class="main-title">Школа русского языка Анастасии Викуловой</div>
             <div class="additional-info">ОНЛАЙН ЗАНЯТИЯ ПО РУССКОМУ ЯЗЫКУ</div>
             <span class="brlarge"></span>
-            <a href="/boxes.html">
-                <div class="button1">ЗАПИСАТЬСЯ НА ПРОБНЫЙ УРОК</div>
-            </a>
+
+            <button data-modal-target="#modal" class="btn" >ЗАПИСАТЬСЯ НА ПРОБНЫЙ УРОК</button>
+            
+            
+           
         </div>
+       
+       
         <div class="main-picture">
-            <img src="portrait.WEBP" alt="" class="two">
+            <img src="pictures/portrait.WEBP" alt="" class="two">
         </div>
 
     </div>
     <div class="divider"></div>
 
 
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <div class="modal-title">Записаться на пробный урок</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form class="send-message" action="https://formsubmit.co/legko100ballov@mail.ru" method="POST">
+                <input type="text" name="name" placeholder="Введите ваше имя" required>
+                <input type="email" name="email" placeholder="Введите вашу почту" required>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        
+    </div>
+    <div id="overlay"></div>
+    
+
     <div class="container-EG">
         <div class="case-picture">
-            <img src="group-lesson1.jpeg" alt="" class="two">
+            <img src="pictures/group-lesson1.jpeg" alt="" class="two">
         </div>
         <div class="case-info">
             <div class="case-name">Программа подготовки к ЕГЭ</div>
@@ -99,7 +117,7 @@
     <div class="divider"></div>
     <div class="container-individual">
         <div class="case-picture">
-            <img src="student-teacher.jpeg" alt="" class="two">
+            <img src="pictures/student-teacher.jpeg" alt="" class="two">
         </div>
         <div class="case-info">
             <div class="case-name">Индивидуальные занятия</div>
@@ -114,11 +132,15 @@
         <nav>
             <div class="footer2">
                 <ul>
-                    <li class="logo"><a href="/index.html"><img src="mail.svg" alt="" class="icons"> </a></li>
-                    <li class="hideOnmobile"><a href="https://www.instagram.com/anastasia.vikulova?igsh=MXU0MmxuZ3BhaGVtMw=="> <img src="instagram.svg" alt="" class="icons"></a></li>
-                    <li class="hideOnmobile"><a href="https://vk.com/legko100ballov">  <img src="vk.svg" alt="" class="icons"></a></li>
+                    <li class="logo"><a href="/index.html"><img src="pictures/icons/mail.svg" alt="" class="icons"> </a>
+                    </li>
+                    <li class="hideOnmobile"><a
+                            href="https://www.instagram.com/anastasia.vikulova?igsh=MXU0MmxuZ3BhaGVtMw=="> <img
+                                src="pictures/icons/instagram.svg" alt="" class="icons"></a></li>
+                    <li class="hideOnmobile"><a href="https://vk.com/legko100ballov"> <img src="pictures/icons/vk.svg"
+                                alt="" class="icons"></a></li>
                 </ul>
-          
+
         </nav>
 
     </footer>
