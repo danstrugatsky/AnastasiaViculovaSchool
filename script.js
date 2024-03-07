@@ -1,149 +1,46 @@
-<!DOCTYPE html>
-<html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Школа русского языка Анастасии Викуловой</title>
-    <link rel="stylesheet" href="assets/styles.css">
-    <script defer src="script.js"></script>
-</head>
-
-<body>
-    <nav>
-        <div class="sidebar1">
-            <ul class="sidebar">
-                <li onclick=hideSidebar()><a href="#"> <svg xmlns="http://www.w3.org/2000/svg" height="24"
-                            viewBox="0 -960 960 960" width="24">
-                            <path
-                                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
-                        </svg></a></li>
-                <li><a href="/materials.html"> ГРУППОВЫЕ ЗАНЯТИЯ</a></li>
-                <li><a href="/boxes.html"> ИНДИВИДУАЛЬНЫЕ ЗАНЯТИЯ</a></li>
-                <li><a href="/designes.html"> ГЛАВНАЯ</a></li>
-            </ul>
-        </div>
-        <div class="menu">
-            <ul>
-
-                <li class="hideOnmobile"><a href="/materials.html"> ГРУППОВЫЕ ЗАНЯТИЯ</a></li>
-                <li class="hideOnmobile"><a href="/boxes.html"> ИНДИВИДУАЛЬНЫЕ ЗАНЯТИЯ</a></li>
-                <li class="hideOnmobile"><a href="/designes.html"> ГЛАВНАЯ</a></li>
-                <li class="menu-button" onclick=showSidebar()><a href="#"> <svg xmlns="http://www.w3.org/2000/svg"
-                            height="26" viewBox="0 -960 960 960" width="26">
-                            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-                        </svg></a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <script>
-        
+function showSidebar() {
+    const sidebar = document.querySelector('.sidebar')
+    sidebar.style.display = 'flex'
+}
+function hideSidebar() {
+    const sidebar = document.querySelector('.sidebar')
+    sidebar.style.display = 'none'
+}
 
 
+const openModalButtons = document.querySelectorAll('[data-modal-target]')
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const overlay = document.getElementById('overlay')
 
-    </script>
-    <div class="container-main">
-        <div class="main-info">
-            <div class="main-title">Школа русского языка Анастасии Викуловой</div>
-            <div class="additional-info">ОНЛАЙН ЗАНЯТИЯ ПО РУССКОМУ ЯЗЫКУ</div>
-            <span class="brlarge"></span>
+openModalButtons.forEach(button => {
+button.addEventListener('click', () => {
+const modal = document.querySelector(button.dataset.modalTarget)
+openModal(modal)
+})
+})
 
-            <button data-modal-target="#modal" class="btn" >ЗАПИСАТЬСЯ НА ПРОБНЫЙ УРОК</button>
-            
-            
-           
-        </div>
-       
-       
-        <div class="main-picture">
-            <img src="pictures/portrait.WEBP" alt="" class="two">
-        </div>
+overlay.addEventListener('click', () => {
+const modals = document.querySelectorAll('.modal.active')
+modals.forEach(modal => {
+closeModal(modal)
+})
+})
 
-    </div>
-    <div class="divider"></div>
+closeModalButtons.forEach(button => {
+button.addEventListener('click', () => {
+const modal = button.closest('.modal')
+closeModal(modal)
+})
+})
 
+function openModal(modal) {
+if (modal == null) return
+modal.classList.add('active')
+overlay.classList.add('active')
+}
 
-    <div class="modal" id="modal">
-        <div class="modal-header">
-            <div class="modal-title">Записаться на пробный урок</div>
-            <button data-close-button class="close-button">&times;</button>
-        </div>
-        <div class="modal-body">
-            <form class="send-message" action="https://formsubmit.co/legko100ballov@mail.ru" method="POST">
-                <input type="text" name="name" placeholder="Введите ваше имя" required>
-                <input type="email" name="email" placeholder="Введите вашу почту" required>
-                <button type="submit">Send</button>
-            </form>
-        </div>
-        
-    </div>
-    <div id="overlay"></div>
-    
-
-    <div class="container-EG">
-        <div class="case-picture">
-            <img src="pictures/group-lesson1.jpeg" alt="" class="two">
-        </div>
-        <div class="case-info">
-            <div class="case-name">Программа подготовки к ЕГЭ</div>
-            <div class="case-description">
-                Занятия проходят один раз в неделю по 2 часа.<br>
-
-                Программа рассчитана на учебный год.<br>
-                <span class="brmedium"></span>
-
-                Стоимость месяца занятий (8 часов) — 5600 руб. / 700 руб./час. </span><span class="break-point"></span>
-                Предоплата за месяц — 100%, чтобы
-                зафиксировать
-                удобный день и время проведения занятий.<br>
-                <span class="brmedium"></span>
-                Работаем на специальной онлайн-платформе в мини-группах (до 8 человек).<br>
-
-                Сначала полностью повторяем всю теорию + подкрепляем заданиями, показываю все «ловушки» ЕГЭ, даю
-                алгоритмы
-                решения, закрепляем материал. Параллельно готовимся к сочинению.<br>
-                <span class="brmedium"></span>
-                Домашние задания с обратной связью, проверкой.<br>
-                <span class="brmedium"></span>
-                Общий чат с преподавателем, ответы на вопросы.<br>
-                <span class="brmedium"></span>
-                Все материалы (таблицы, пособия, сборники, опорные сигналы и т.д.) остаются у ребят.
-            </div>
-        </div>
-    </div>
-    <!-- <div class="container-OG"></div>-->
-
-    <div class="divider"></div>
-    <div class="container-individual">
-        <div class="case-picture">
-            <img src="pictures/student-teacher.jpeg" alt="" class="two">
-        </div>
-        <div class="case-info">
-            <div class="case-name">Индивидуальные занятия</div>
-            <div class="case-description">
-
-
-                Стоимость индивидуального занятия - 2000 рублей
-            </div>
-        </div>
-    </div>
-    <footer>
-        <nav>
-            <div class="footer2">
-                <ul>
-                    <li class="logo"><a href="/index.html"><img src="pictures/icons/mail.svg" alt="" class="icons"> </a>
-                    </li>
-                    <li class="hideOnmobile"><a
-                            href="https://www.instagram.com/anastasia.vikulova?igsh=MXU0MmxuZ3BhaGVtMw=="> <img
-                                src="pictures/icons/instagram.svg" alt="" class="icons"></a></li>
-                    <li class="hideOnmobile"><a href="https://vk.com/legko100ballov"> <img src="pictures/icons/vk.svg"
-                                alt="" class="icons"></a></li>
-                </ul>
-
-        </nav>
-
-    </footer>
-</body>
-
-</html>
+function closeModal(modal) {
+if (modal == null) return
+modal.classList.remove('active')
+overlay.classList.remove('active')
+}
