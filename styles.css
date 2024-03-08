@@ -280,6 +280,19 @@ nav a {
     height: 200px;
  
 }
+@media (max-width: 900px) {
+    .main-picture{
+        display: none;
+    }
+    .hideOnmobile {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+
+    }
+}
 
 @media (max-width: 400px) {
 
