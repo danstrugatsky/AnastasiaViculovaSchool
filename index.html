@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Школа русского языка Анастасии Викуловой</title>
-    <link rel="stylesheet" href="1styles.css">
+    <link rel="stylesheet" href="assets/styles.css">
     <script defer src="script.js"></script>
 </head>
 
@@ -30,18 +30,22 @@
                 <li class="hideOnmobile"><a href="/boxes.html"> ИНДИВИДУАЛЬНЫЕ ЗАНЯТИЯ</a></li>
                 <li class="hideOnmobile"><a href="/designes.html"> ГЛАВНАЯ</a></li>
                 <li class="menu-button" onclick=showSidebar()><a href="#"> <svg xmlns="http://www.w3.org/2000/svg"
-                            height="26" viewBox="0 -960 960 960" width="26">
-                            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-                        </svg></a></li>
+                    height="26" viewBox="0 -960 960 960" width="26">
+                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                </svg></a></li>
             </ul>
         </div>
     </nav>
 
     <script>
-        
-
-
-
+        function showSidebar() {
+            const sidebar = document.querySelector('.sidebar1')
+            sidebar.style.display = 'flex'
+        }
+        function hideSidebar() {
+            const sidebar = document.querySelector('.sidebar1')
+            sidebar.style.display = 'none'
+        }
     </script>
     <div class="container-main">
         <div class="main-info">
@@ -57,7 +61,7 @@
        
        
         <div class="main-picture">
-            <img src="portrait.WEBP" alt="" class="two">
+            <img src="pictures/portrait.WEBP" alt="" class="two">
         </div>
 
     </div>
@@ -67,13 +71,15 @@
     <div class="modal" id="modal">
         <div class="modal-header">
             <div class="modal-title">Записаться на пробный урок</div>
-            <button data-close-button class="close-button">&times;</button>
+            <button data-close-button class="close-button2">&times;</button>
         </div>
         <div class="modal-body">
             <form class="send-message" action="https://formsubmit.co/legko100ballov@mail.ru" method="POST">
                 <input type="text" name="name" placeholder="Введите ваше имя" required>
                 <input type="email" name="email" placeholder="Введите вашу почту" required>
-                <button type="submit">Send</button>
+                <input class="main-message" type="text"  name="name" placeholder="Опишите ваш запрос (в каком классе обучаетесь, цель занятий)" required>
+                <input type="hidden" name="_captcha" value="false">
+                <button type="submit">Отправить</button>
             </form>
         </div>
         
@@ -83,7 +89,7 @@
 
     <div class="container-EG">
         <div class="case-picture">
-            <img src="group-lesson1.jpeg" alt="" class="two">
+            <img src="pictures/group-lesson1.jpeg" alt="" class="two">
         </div>
         <div class="case-info">
             <div class="case-name">Программа подготовки к ЕГЭ</div>
@@ -117,7 +123,7 @@
     <div class="divider"></div>
     <div class="container-individual">
         <div class="case-picture">
-            <img src="student-teacher.jpeg" alt="" class="two">
+            <img src="pictures/student-teacher.jpeg" alt="" class="two">
         </div>
         <div class="case-info">
             <div class="case-name">Индивидуальные занятия</div>
@@ -130,14 +136,14 @@
     </div>
     <footer>
         <nav>
-           
-               <ul>
-                    <li class="logo"><a href="/index.html"><img src="mail.svg" alt="" class="icons"> </a>
+            
+                <ul>
+                    <li class="logo"><a href="/index.html"><img src="pictures/icons/mail.svg" alt="" class="icons"> </a>
                     </li>
                     <li class="hideOnmobile"><a
                             href="https://www.instagram.com/anastasia.vikulova?igsh=MXU0MmxuZ3BhaGVtMw=="> <img
-                                src="instagram.svg" alt="" class="icons"></a></li>
-                    <li class="hideOnmobile"><a href="https://vk.com/legko100ballov"> <img src="vk.svg"
+                                src="pictures/icons/instagram.svg" alt="" class="icons"></a></li>
+                    <li class="hideOnmobile"><a href="https://vk.com/legko100ballov"> <img src="pictures/icons/vk.svg"
                                 alt="" class="icons"></a></li>
                 </ul>
 
